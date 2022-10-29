@@ -1,25 +1,38 @@
 module.exports = {
-	env: {
-		es2021: true,
-		node: true,
+	'env': {
+		'es2021': true,
+		'node': true
 	},
-	extends: 'xo',
-	overrides: [
-		{
-			extends: [
-				'xo-typescript',
-			],
-			files: [
-				'*.ts',
-				'*.tsx',
-			],
-		},
+	'extends': [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended'
 	],
-	parserOptions: {
-		ecmaVersion: 'latest',
-		sourceType: 'module',
+	'overrides': [
+	],
+	'parser': '@typescript-eslint/parser',
+	'parserOptions': {
+		'ecmaVersion': 'latest',
+		'sourceType': 'module'
 	},
-	rules: {
-		'new-cap': 'off',
-	},
+	'plugins': [
+		'@typescript-eslint'
+	],
+	'rules': {
+		'indent': [
+			'error',
+			'tab'
+		],
+		'linebreak-style': [
+			'error',
+			'unix'
+		],
+		'quotes': [
+			'error',
+			'single'
+		],
+		'semi': [
+			'error',
+			'always'
+		]
+	}
 };
