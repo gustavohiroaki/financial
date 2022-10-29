@@ -1,13 +1,12 @@
 import Chance from 'chance';
-import IFixedIncome from '@investments/fixed-income/models/IFixedIncome';
+import IFixedIncome from '@entities/IFixedIncome';
 
 type IFixedIncomeOptional = Partial<IFixedIncome>
 
 const chance = new Chance();
 
-function fixedIncomeFixture(fixedIncomePartialData?: IFixedIncomeOptional):IFixedIncome{
+function fixedIncomeFixture(fixedIncomePartialData?: IFixedIncomeOptional):IFixedIncome|Omit<IFixedIncome,'_id'>{
 	return {
-		_id: fixedIncomePartialData?._id || chance.word(),
 		value: fixedIncomePartialData?.value || chance.floating()
 	};
 }

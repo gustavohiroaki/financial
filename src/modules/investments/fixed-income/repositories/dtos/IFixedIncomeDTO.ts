@@ -1,5 +1,5 @@
-import IFixedIncome from '@investments/fixed-income/models/IFixedIncome';
+import IFixedIncome from '@entities/IFixedIncome';
 
-type ICreateFixedIncomeDTO = IFixedIncome
+type ICreateFixedIncomeDTO = Omit<IFixedIncome,'_id'>
 
 export default ICreateFixedIncomeDTO;

@@ -1,6 +1,7 @@
-import IFixedIncome from '@investments/fixed-income/models/IFixedIncome';
-import IFixedIncomeRepository from '@investments/fixed-income/repositories/interfaces/IFixedIncomeRepository';
-import {ICreateFixedIncomeDTO} from '../dtos';
+import crypto from 'crypto';
+import IFixedIncome from '@entities/IFixedIncome';
+import IFixedIncomeRepository from '@modules/investments/fixed-income/repositories/interfaces/IFixedIncomeRepository';
+import {ICreateFixedIncomeDTO} from '@modules/investments/fixed-income/repositories/dtos';
 
 class FixedIncomeRepository implements IFixedIncomeRepository {
 	db: Array<IFixedIncome>;
@@ -9,10 +10,15 @@ class FixedIncomeRepository implements IFixedIncomeRepository {
 	}
 
 	create(payload:ICreateFixedIncomeDTO){
-		this.db.push(payload);
+		const newFixedIncome = {
+			_id: crypto.randomUUID(),
+			...payload
+		};
+
+		this.db.push(newFixedIncome);
 
 		return new Promise<IFixedIncome>((resolve)=>{
-			resolve(payload);
+			resolve(newFixedIncome);
 		});
 	}
 	async getAll(){

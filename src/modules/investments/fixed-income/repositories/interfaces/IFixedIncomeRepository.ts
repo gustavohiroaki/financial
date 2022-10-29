@@ -1,5 +1,5 @@
-import IFixedIncome from '@investments/fixed-income/models/IFixedIncome';
-import {ICreateFixedIncomeDTO} from '../dtos';
+import IFixedIncome from '@entities/IFixedIncome';
+import {ICreateFixedIncomeDTO} from '@modules/investments/fixed-income/repositories/dtos';
 
 interface IFixedIncomeRepository {
     db: Array<IFixedIncome>
