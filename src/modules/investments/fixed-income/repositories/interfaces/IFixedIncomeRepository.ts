@@ -3,8 +3,8 @@ import {ICreateFixedIncomeDTO} from '../dtos';
 
 interface IFixedIncomeRepository {
     db: Array<IFixedIncome>
-    createFixedIncome(payload: ICreateFixedIncomeDTO): IFixedIncome
-    getAllFixedIncome():Array<IFixedIncome>
+    create(payload: ICreateFixedIncomeDTO): IFixedIncome
+    getAll():Array<IFixedIncome>
 }
 
 export default IFixedIncomeRepository;

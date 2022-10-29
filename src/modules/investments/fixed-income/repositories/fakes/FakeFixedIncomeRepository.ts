@@ -8,12 +8,12 @@ class FixedIncomeRepository implements IFixedIncomeRepository {
 		this.db = [];
 	}
 
-	createFixedIncome(payload:ICreateFixedIncomeDTO):IFixedIncome{
+	create(payload:ICreateFixedIncomeDTO):IFixedIncome{
 		this.db.push(payload);
 
 		return payload;
 	}
-	getAllFixedIncome():Array<IFixedIncome>{
+	getAll():Array<IFixedIncome>{
 		return this.db;
 	}
 }

@@ -11,17 +11,17 @@ describe('Unit - FixedIncomeRepository Test', ():void=>{
 
 	it('should use a fake repository to create a new fixed income and return the data created', ()=>{
 		const fixturePayload = fixedIncomeFixture();
-		const fixedIncome = fixedIncomeRepository.createFixedIncome(fixturePayload);
+		const fixedIncome = fixedIncomeRepository.create(fixturePayload);
 		assert.deepStrictEqual(fixedIncome,fixturePayload);
 	});
 
 	it('should find all fixed incomes', ()=>{
 		const firstFixedIncomePayload = fixedIncomeFixture();
 		const secondFixedIncomePayload = fixedIncomeFixture();
-		fixedIncomeRepository.createFixedIncome(firstFixedIncomePayload);
-		fixedIncomeRepository.createFixedIncome(secondFixedIncomePayload);
+		fixedIncomeRepository.create(firstFixedIncomePayload);
+		fixedIncomeRepository.create(secondFixedIncomePayload);
 
-		const findResult = fixedIncomeRepository.getAllFixedIncome();
+		const findResult = fixedIncomeRepository.getAll();
 		const expectedResult = [firstFixedIncomePayload, secondFixedIncomePayload];
 		assert.deepStrictEqual(findResult, expectedResult);
 	});
