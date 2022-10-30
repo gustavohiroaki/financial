@@ -1,5 +1,5 @@
 import IFixedIncomeRepository from '@modules/investments/fixed-income/repositories/interfaces/IFixedIncomeRepository';
-import IFixedIncome from 'src/entities/IFixedIncome';
+import IFixedIncome from '@entities/IFixedIncome';
 
 interface ICreateFixedIncome {
     fixedIncomeRepository: IFixedIncomeRepository
